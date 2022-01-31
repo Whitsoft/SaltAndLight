@@ -14,7 +14,7 @@
   <nav role="navigation">
     <ul>
       <%= if @current_member do %>
-        <li><%= @current_member.membername %></li>
+        <li><%= @current_member.username %></li>
         <li>
           <%= link "Log out",
                 to: Routes.session_path(@conn, :delete, @current_member),

@@ -2,7 +2,7 @@ defmodule CupWeb.MemberController do
 
   use CupWeb, :controller         # :controller API
 
-  alias Cup.Accounts
+  alias Cup.Accounts.Accounts
   alias Cup.Accounts.Member
 
   # member must authenticate to access index or show page
@@ -20,7 +20,6 @@ defmodule CupWeb.MemberController do
   #   binary() | atom(),
   #   Keyword.t() | map() | binary() | atom()
   #   ) :: Plug.Conn.t()
-
 
   def new(conn, _params) do
     changeset = Accounts.change_registration(%Member{}, %{})

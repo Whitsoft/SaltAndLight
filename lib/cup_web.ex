@@ -28,7 +28,7 @@ defmodule CupWeb do
 
       import Plug.Conn
       import CupWeb.Auth, only: [authenticate_member: 2] # New import from auth
-      alias Cup.Router.Helpers, as: Routes
+      alias CupWeb.Router.Helpers, as: Routes
     end
   end
 

@@ -38,7 +38,7 @@
   </div>
   
   <div>
-    <%= text_input f, :membername, placeholder: "Username" %>
+    <%= text_input f, :username, placeholder: "Username" %>
   </div>
 
   <div>

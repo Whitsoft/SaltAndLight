@@ -1,4 +1,4 @@
-defmodule Cup.Accounts do
+defmodule Cup.Accounts.Accounts do
 
   import Ecto.Query
 
@@ -46,13 +46,13 @@ alias Cup.Accounts.Member
   end
 
   def register_member(attrs \\ %{}) do
-    %Member{}
+    %Member{}                               # a struct
     |> Member.registration_changeset(attrs)
     |> Repo.insert()
   end
 
   def authenticate_by_membername_and_pass(membername, given_pass) do
-    member = get_member_by(membername: membername)
+    member = get_member_by(membername: membername) # look up Member bu membername
 
     cond do
       member && Pbkdf2.verify_pass(given_pass, member.password_hash) ->
@@ -60,7 +60,7 @@ alias Cup.Accounts.Member
       member ->
         {:error, :unauthorized}
     true ->
-        Pbkdf2.no_member_verify()
+        Pbkdf2.no_member_verify()   # member does not exist - fo thid for security
         {:error, :not_found}
     end
   end

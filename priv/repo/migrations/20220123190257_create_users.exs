@@ -14,7 +14,7 @@ defmodule Cup.Repo.Migrations.CreateUsers do
       add :phoneone,      :string
       add :phonetwo,      :string
       add :currentmenber, :string
-      add :membername,    :string
+      add :username,    :string
       add :password_hash, :string
       timestamps()
     end

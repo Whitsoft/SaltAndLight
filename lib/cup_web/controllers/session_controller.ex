@@ -9,7 +9,7 @@ defmodule CupWeb.SessionController do
     conn,
     %{"session" => %{"membername" => membername, "password" => pass}}
   ) do
-    case Cup.Accounts.authenticate_by_member_and_pass(membername, pass) do
+    case Cup.Accounts.Accounts.authenticate_by_membername_and_pass(membername, pass) do
       {:ok, member} ->
         conn
         |> CupWeb.Auth.login(member)

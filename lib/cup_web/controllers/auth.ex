@@ -19,7 +19,7 @@ defmodule CupWeb.Auth do  # a module plug
       member = conn.assigns[:current_member] ->
         put_current_member(conn, member)
 
-        member = member_id && Cup.Accounts.get_member(member_id) ->
+        member = member_id && Cup.Accounts.Accounts.get_member(member_id) ->
           assign(conn, :current_member, member) # member exists, store in conn
 
       true ->

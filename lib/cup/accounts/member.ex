@@ -4,7 +4,7 @@ defmodule Cup.Accounts.Member do
   import Ecto.Changeset
   alias Cup.Accounts.Member
 
-  schema "members" do
+  schema "members" do                # : keyword list
     field :title,         :string
     field :lastname,      :string
     field :firstname,     :string
@@ -38,15 +38,10 @@ defmodule Cup.Accounts.Member do
     |> put_pass_hash()
   end
 
-  def change_registration(%Member{} = member, params) do
-    Member.registration_changeset(member, params)
-  end
+  #def change_registration(%Member{} = member, params) do
+  #  Member.registration_changeset(member, params)
+ # end
 
-  def register_member(attrs \\ %{}) do
-    %Member{}
-    |> Member.registration_changeset(attrs)
-    |> Repo.insert()
-  end
 
   defp put_pass_hash(changeset) do
     case changeset do

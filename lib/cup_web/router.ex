@@ -16,7 +16,7 @@ defmodule CupWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", CupWeb do
+  scope "/", CupWeb do     # router prefix is Cup - also controller prefix
     pipe_through :browser
                            # index route stores :index in conn
     get "/",               PageController, :index  # match URL & send to controller
